@@ -13,17 +13,14 @@ public class WebConfig {
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration corsConfig = new CorsConfiguration();
         
-        // Frontend origin එකට අවසර දීම
+        corsConfig.addAllowedOrigin("https://godrive-frontend-git-main-vinilvidushankas-projects.vercel.app");
         corsConfig.addAllowedOrigin("http://localhost:5173"); 
         corsConfig.setMaxAge(3600L);
         
-        // ඕනෑම HTTP Method එකකට (GET, POST, etc.) අවසර දීම
         corsConfig.addAllowedMethod("*"); 
         
-        // ඕනෑම Header එකකට අවසර දීම
         corsConfig.addAllowedHeader("*");
         
-        // Credentials (Cookies/Auth) allow කිරීම
         corsConfig.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
