@@ -13,6 +13,7 @@ public class WebConfig {
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration corsConfig = new CorsConfiguration();
         
+        corsConfig.addAllowedOrigin("https://godrive-frontend-six.vercel.app");
         corsConfig.addAllowedOrigin("https://godrive-frontend-git-main-vinilvidushankas-projects.vercel.app");
         corsConfig.addAllowedOrigin("http://localhost:5173"); 
         corsConfig.setMaxAge(3600L);
